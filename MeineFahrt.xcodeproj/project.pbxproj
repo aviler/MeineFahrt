@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A7ACA59A22667154001ADF6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA59922667154001ADF6D /* AppDelegate.swift */; };
-		A7ACA59C22667154001ADF6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA59B22667154001ADF6D /* ViewController.swift */; };
-		A7ACA59F22667154001ADF6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA59D22667154001ADF6D /* Main.storyboard */; };
 		A7ACA5A12266715B001ADF6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5A02266715B001ADF6D /* Assets.xcassets */; };
 		A7ACA5A42266715B001ADF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5A22266715B001ADF6D /* LaunchScreen.storyboard */; };
 		A7ACA5AF2266715C001ADF6D /* MeineFahrtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5AE2266715C001ADF6D /* MeineFahrtTests.swift */; };
+		A7ACA5BB22667A8F001ADF6D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5B922667A8F001ADF6D /* ListViewController.swift */; };
+		A7ACA5BC22667A8F001ADF6D /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */; };
+		A7ACA5C222667CF5001ADF6D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +29,15 @@
 /* Begin PBXFileReference section */
 		A7ACA59622667154001ADF6D /* MeineFahrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeineFahrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ACA59922667154001ADF6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7ACA59B22667154001ADF6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A7ACA59E22667154001ADF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7ACA5A02266715B001ADF6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7ACA5A32266715B001ADF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7ACA5A52266715B001ADF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7ACA5AA2266715C001ADF6D /* MeineFahrtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeineFahrtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ACA5AE2266715C001ADF6D /* MeineFahrtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeineFahrtTests.swift; sourceTree = "<group>"; };
 		A7ACA5B02266715C001ADF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7ACA5B922667A8F001ADF6D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +79,11 @@
 		A7ACA59822667154001ADF6D /* MeineFahrt */ = {
 			isa = PBXGroup;
 			children = (
+				A7ACA5BD22667A9C001ADF6D /* Model */,
+				A7ACA5BE22667AA3001ADF6D /* View */,
+				A7ACA5BF22667AAB001ADF6D /* ViewModel */,
+				A7ACA5C022667AB3001ADF6D /* Support */,
 				A7ACA59922667154001ADF6D /* AppDelegate.swift */,
-				A7ACA59B22667154001ADF6D /* ViewController.swift */,
-				A7ACA59D22667154001ADF6D /* Main.storyboard */,
-				A7ACA5A02266715B001ADF6D /* Assets.xcassets */,
-				A7ACA5A22266715B001ADF6D /* LaunchScreen.storyboard */,
-				A7ACA5A52266715B001ADF6D /* Info.plist */,
 			);
 			path = MeineFahrt;
 			sourceTree = "<group>";
@@ -94,6 +95,40 @@
 				A7ACA5B02266715C001ADF6D /* Info.plist */,
 			);
 			path = MeineFahrtTests;
+			sourceTree = "<group>";
+		};
+		A7ACA5BD22667A9C001ADF6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7ACA5BE22667AA3001ADF6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5B922667A8F001ADF6D /* ListViewController.swift */,
+				A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7ACA5BF22667AAB001ADF6D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A7ACA5C022667AB3001ADF6D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5A02266715B001ADF6D /* Assets.xcassets */,
+				A7ACA5A22266715B001ADF6D /* LaunchScreen.storyboard */,
+				A7ACA5A52266715B001ADF6D /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +214,7 @@
 			files = (
 				A7ACA5A42266715B001ADF6D /* LaunchScreen.storyboard in Resources */,
 				A7ACA5A12266715B001ADF6D /* Assets.xcassets in Resources */,
-				A7ACA59F22667154001ADF6D /* Main.storyboard in Resources */,
+				A7ACA5BC22667A8F001ADF6D /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7ACA59C22667154001ADF6D /* ViewController.swift in Sources */,
 				A7ACA59A22667154001ADF6D /* AppDelegate.swift in Sources */,
+				A7ACA5BB22667A8F001ADF6D /* ListViewController.swift in Sources */,
+				A7ACA5C222667CF5001ADF6D /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +257,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7ACA59D22667154001ADF6D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7ACA59E22667154001ADF6D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A7ACA5A22266715B001ADF6D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4U424J7UW;
-				INFOPLIST_FILE = MeineFahrt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MeineFahrt/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4U424J7UW;
-				INFOPLIST_FILE = MeineFahrt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MeineFahrt/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
