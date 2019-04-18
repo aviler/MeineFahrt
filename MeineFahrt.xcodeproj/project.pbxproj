@@ -14,6 +14,13 @@
 		A7ACA5BB22667A8F001ADF6D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5B922667A8F001ADF6D /* ListViewController.swift */; };
 		A7ACA5BC22667A8F001ADF6D /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */; };
 		A7ACA5C222667CF5001ADF6D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */; };
+		A7ACA5C62266ADD0001ADF6D /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5C52266ADD0001ADF6D /* Poi.swift */; };
+		A7ACA5CA2266B8A0001ADF6D /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5C92266B8A0001ADF6D /* URLEncoder.swift */; };
+		A7ACA5CE2266B98D001ADF6D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5CD2266B98D001ADF6D /* NetworkError.swift */; };
+		A7ACA5D02266BA9E001ADF6D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5CF2266BA9E001ADF6D /* Request.swift */; };
+		A7ACA5D22266BB1B001ADF6D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5D12266BB1B001ADF6D /* Endpoint.swift */; };
+		A7ACA5D42266BB60001ADF6D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5D32266BB60001ADF6D /* Response.swift */; };
+		A7ACA5D6226778B5001ADF6D /* PoiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA5D5226778B5001ADF6D /* PoiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,13 @@
 		A7ACA5B922667A8F001ADF6D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		A7ACA5C52266ADD0001ADF6D /* Poi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
+		A7ACA5C92266B8A0001ADF6D /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
+		A7ACA5CD2266B98D001ADF6D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A7ACA5CF2266BA9E001ADF6D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A7ACA5D12266BB1B001ADF6D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A7ACA5D32266BB60001ADF6D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A7ACA5D5226778B5001ADF6D /* PoiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,7 @@
 				A7ACA5BD22667A9C001ADF6D /* Model */,
 				A7ACA5BE22667AA3001ADF6D /* View */,
 				A7ACA5BF22667AAB001ADF6D /* ViewModel */,
+				A7ACA5C42266A181001ADF6D /* Network */,
 				A7ACA5C022667AB3001ADF6D /* Support */,
 				A7ACA59922667154001ADF6D /* AppDelegate.swift */,
 			);
@@ -100,6 +115,7 @@
 		A7ACA5BD22667A9C001ADF6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7ACA5C52266ADD0001ADF6D /* Poi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +145,35 @@
 				A7ACA5A52266715B001ADF6D /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		A7ACA5C42266A181001ADF6D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5C82266B847001ADF6D /* HTTP */,
+				A7ACA5C72266B4FF001ADF6D /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A7ACA5C72266B4FF001ADF6D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5D5226778B5001ADF6D /* PoiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A7ACA5C82266B847001ADF6D /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACA5C92266B8A0001ADF6D /* URLEncoder.swift */,
+				A7ACA5CD2266B98D001ADF6D /* NetworkError.swift */,
+				A7ACA5CF2266BA9E001ADF6D /* Request.swift */,
+				A7ACA5D12266BB1B001ADF6D /* Endpoint.swift */,
+				A7ACA5D32266BB60001ADF6D /* Response.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7ACA5CA2266B8A0001ADF6D /* URLEncoder.swift in Sources */,
+				A7ACA5D6226778B5001ADF6D /* PoiService.swift in Sources */,
+				A7ACA5D02266BA9E001ADF6D /* Request.swift in Sources */,
+				A7ACA5C62266ADD0001ADF6D /* Poi.swift in Sources */,
+				A7ACA5D42266BB60001ADF6D /* Response.swift in Sources */,
+				A7ACA5D22266BB1B001ADF6D /* Endpoint.swift in Sources */,
 				A7ACA59A22667154001ADF6D /* AppDelegate.swift in Sources */,
 				A7ACA5BB22667A8F001ADF6D /* ListViewController.swift in Sources */,
+				A7ACA5CE2266B98D001ADF6D /* NetworkError.swift in Sources */,
 				A7ACA5C222667CF5001ADF6D /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

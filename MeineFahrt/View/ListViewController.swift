@@ -25,7 +25,7 @@ class ListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     print("ListViewController didLoad()")
-    self.viewmodel.fetchCars()
+    self.viewmodel.fetchVehicles()
   }
   
 }
