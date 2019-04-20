@@ -1,7 +1,7 @@
 :taxi: MeineFahrt :red_car:
 ==========
 
-A small app to show cars both in a list and on a map.
+A small app to show vehicles position both in a list and on a map.
 
 Build
 -----
