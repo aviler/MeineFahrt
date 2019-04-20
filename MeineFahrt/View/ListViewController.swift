@@ -11,10 +11,12 @@ import UIKit
 
 class ListViewController: UIViewController {
   
-  let viewmodel: ListViewModel
+  @IBOutlet weak var listTableView: UITableView!
+  
+  let viewModel: ListViewModel
   
   init(withViewModel vm: ListViewModel) {
-    self.viewmodel = vm
+    self.viewModel = vm
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -24,8 +26,24 @@ class ListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("ListViewController didLoad()")
-    self.viewmodel.fetchVehicles()
+    
+    setTableView()
+    
+    self.viewModel.fetchVehicles()
   }
   
+  func setTableView() {
+    self.listTableView.dataSource = self.viewModel.dataSource
+    
+    self.viewModel.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+      DispatchQueue.main.async {
+        self?.listTableView.reloadData()
+      }
+    }
+    
+    self.listTableView.register(UINib(nibName: "ListCell", bundle: nil),
+                                forCellReuseIdentifier: "listCell")
+  }
 }
+
+

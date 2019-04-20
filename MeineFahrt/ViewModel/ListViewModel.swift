@@ -12,22 +12,22 @@ import Foundation
 class ListViewModel {
 
   let service: PoiService
+  let dataSource: ListDataSource
+  
   var pois: [Poi]?
   
   let testBounds = Bounds(p1Lat: 53.694865, p1Lon: 9.757589, p2Lat: 53.394655, p2Lon: 10.099891)
   
-  init(withService service: PoiService) {
+  init(withService service: PoiService, andDataSource dataSource: ListDataSource) {
     self.service = service
+    self.dataSource = dataSource
   }
   
-  func fetchVehicles() {
+  func fetchVehicles() {    
     self.service.getPois(at: testBounds) { [weak self] (data) in
       switch data {
       case .success(let pois):
-        self?.pois = pois
-//        for p in (self?.pois)! {
-//          print(p.id)
-//        }
+        self?.dataSource.data.value = pois
       case .failure(let errString):
         print(errString.rawValue)
       }
