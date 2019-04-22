@@ -11,12 +11,12 @@ import Foundation
 
 class ListViewModel {
 
-  let service: PoiService
+  private let service: PoiService
   let dataSource: ListDataSource
   
-  var pois: [Poi]?
+  private var pois: [Poi]?
   
-  let testBounds = Bounds(p1Lat: 53.694865, p1Lon: 9.757589, p2Lat: 53.394655, p2Lon: 10.099891)
+  private let testBounds = Bounds(p1Lat: 53.694865, p1Lon: 9.757589, p2Lat: 53.394655, p2Lon: 10.099891)
   
   init(withService service: PoiService, andDataSource dataSource: ListDataSource) {
     self.service = service

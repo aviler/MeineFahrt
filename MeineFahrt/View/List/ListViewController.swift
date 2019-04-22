@@ -27,6 +27,8 @@ class ListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), tag: 0)
+    
     setTableView()
     
     self.viewModel.fetchVehicles()

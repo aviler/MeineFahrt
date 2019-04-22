@@ -15,18 +15,29 @@ struct Bounds {
   let p2Lat: Double
   let p2Lon: Double
   
+//  init(_ p1Lat: Double, _ p1Lon: Double, _ p2Lat: Double, _ p2Lon: Double) {
+//    self.p1Lat = p1Lat
+//    self.p1Lon = p1Lon
+//    self.p2Lat = p2Lat
+//    self.p2Lon = p2Lon
+//  }
+  
   func asParameters() -> [String:String] {
     return [ "p1Lat":"\(p1Lat)", "p1Lon":"\(p1Lon)",
       "p2Lat":"\(p2Lat)", "p2Lon":"\(p2Lon)"]
   }
 }
 
-struct PoiService {
+@objc class PoiService: NSObject {
   
   let session: URLSession
   
-  init(withSession session: URLSession) {
+  @objc init(withSession session: URLSession) {
     self.session = session
+  }
+  
+  @objc func test() -> Int {
+    return 42
   }
   
   func getPois(at bounds: Bounds, _ completion: @escaping (Result<[Poi]>) -> ()) {

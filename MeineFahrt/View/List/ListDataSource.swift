@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 
-class GenericDataSource<T> : NSObject {
+class GenericDataSource<T>: NSObject {
   var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class ListDataSource : GenericDataSource<Poi>, UITableViewDataSource {
+class ListDataSource: GenericDataSource<Poi>, UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
