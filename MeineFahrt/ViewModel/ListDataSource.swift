@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 
-class GenericDataSource<T> : NSObject {
+class GenericDataSource<T>: NSObject {
   var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class ListDataSource : GenericDataSource<Poi>, UITableViewDataSource {
+class ListDataSource: GenericDataSource<ListItem>, UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -28,10 +28,10 @@ class ListDataSource : GenericDataSource<Poi>, UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListCell
     
-    let poi = self.data.value[indexPath.row]
-    cell.textLabel?.text = "\(poi.id)"
-    cell.detailTextLabel?.text = poi.fleetType
-    
+    let item = self.data.value[indexPath.row]
+    cell.address.text = item.address
+    cell.fleet.image = UIImage(named: item.type!)
+ 
     return cell
   }
 }

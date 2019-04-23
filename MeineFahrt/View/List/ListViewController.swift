@@ -9,11 +9,12 @@
 import UIKit
 
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UITableViewDelegate {
   
   @IBOutlet weak var listTableView: UITableView!
+  @IBOutlet weak var loadingView: UIView!
   
-  let viewModel: ListViewModel
+  private let viewModel: ListViewModel
   
   init(withViewModel vm: ListViewModel) {
     self.viewModel = vm
@@ -26,7 +27,12 @@ class ListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.viewModel.showLoading  = { [weak self] (show) in
+      DispatchQueue.main.async {
+        self?.loadingView.isHidden = !show        
+      }
+    }
+
     setTableView()
     
     self.viewModel.fetchVehicles()
@@ -34,6 +40,7 @@ class ListViewController: UIViewController {
   
   func setTableView() {
     self.listTableView.dataSource = self.viewModel.dataSource
+    self.listTableView.delegate = self
     
     self.viewModel.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
       DispatchQueue.main.async {
@@ -44,6 +51,8 @@ class ListViewController: UIViewController {
     self.listTableView.register(UINib(nibName: "ListCell", bundle: nil),
                                 forCellReuseIdentifier: "listCell")
   }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 60
+  }
 }
-
-

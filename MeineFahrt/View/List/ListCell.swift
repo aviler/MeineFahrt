@@ -11,7 +11,10 @@ import UIKit
 
 class ListCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var fleet: UIImageView!
+  @IBOutlet weak var address: UILabel!
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

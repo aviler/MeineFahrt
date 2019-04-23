@@ -27,18 +27,21 @@ class Application: UIResponder, UIApplicationDelegate {
     let listVC = ListViewController(withViewModel: listVM)
     
     // Map
+    let mapVM = MapViewModel(withService: poiService)
+    let mapVC = MapViewController(viewModel: mapVM)
     
     
-    
-    
-    // Coordinator + TabBar
-    
+    // TabBar
+    let tabBar = UITabBarController()
+    listVC.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), tag: 0)
+    mapVC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "earth"), tag: 1)
+    tabBar.viewControllers = [listVC, mapVC]
     
     
     
     // Make key and visible
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.rootViewController = listVC
+    window.rootViewController = tabBar
     window.makeKeyAndVisible()
     self.window = window
     
