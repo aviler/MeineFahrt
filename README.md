@@ -26,3 +26,4 @@ Changelog
 - 0.0.1 First commit with default structure
 - 0.0.2 Added Network layer
 - 0.0.3 Basic list view to show acquired data
+- 0.0.4 Added map view coded in Objective-c. Redesigned list view with usefull info
