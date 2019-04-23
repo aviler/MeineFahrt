@@ -14,7 +14,8 @@
 		A749CB8A226BAC510076D4D2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A749CB88226BAC510076D4D2 /* MapViewController.m */; };
 		A749CB8B226BAC510076D4D2 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A749CB89226BAC510076D4D2 /* MapViewController.xib */; };
 		A749CB93226D06450076D4D2 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749CB92226D06450076D4D2 /* MapViewModel.swift */; };
-		A7521743226D6C09006166F3 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7521742226D6C09006166F3 /* CustomAnnotation.m */; };
+		A7521743226D6C09006166F3 /* PoiAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7521742226D6C09006166F3 /* PoiAnnotation.m */; };
+		A7649179226E698400E17522 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7649178226E698400E17522 /* ListItem.swift */; };
 		A7ACA59A22667154001ADF6D /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACA59922667154001ADF6D /* Application.swift */; };
 		A7ACA5A12266715B001ADF6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5A02266715B001ADF6D /* Assets.xcassets */; };
 		A7ACA5A42266715B001ADF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ACA5A22266715B001ADF6D /* LaunchScreen.storyboard */; };
@@ -51,8 +52,9 @@
 		A749CB88226BAC510076D4D2 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		A749CB89226BAC510076D4D2 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		A749CB92226D06450076D4D2 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		A7521741226D6C09006166F3 /* CustomAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
-		A7521742226D6C09006166F3 /* CustomAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		A7521741226D6C09006166F3 /* PoiAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoiAnnotation.h; sourceTree = "<group>"; };
+		A7521742226D6C09006166F3 /* PoiAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoiAnnotation.m; sourceTree = "<group>"; };
+		A7649178226E698400E17522 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		A7ACA59622667154001ADF6D /* MeineFahrt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeineFahrt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ACA59922667154001ADF6D /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		A7ACA5A02266715B001ADF6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 			children = (
 				A7ACA5B922667A8F001ADF6D /* ListViewController.swift */,
 				A7ACA5BA22667A8F001ADF6D /* ListViewController.xib */,
-				A749CB80226B5D6F0076D4D2 /* ListDataSource.swift */,
 				A749CB82226B621E0076D4D2 /* ListCell.swift */,
 				A749CB83226B621E0076D4D2 /* ListCell.xib */,
 			);
@@ -109,8 +110,8 @@
 				A749CB87226BAC510076D4D2 /* MapViewController.h */,
 				A749CB88226BAC510076D4D2 /* MapViewController.m */,
 				A749CB89226BAC510076D4D2 /* MapViewController.xib */,
-				A7521741226D6C09006166F3 /* CustomAnnotation.h */,
-				A7521742226D6C09006166F3 /* CustomAnnotation.m */,
+				A7521741226D6C09006166F3 /* PoiAnnotation.h */,
+				A7521742226D6C09006166F3 /* PoiAnnotation.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -169,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A7ACA5C52266ADD0001ADF6D /* Poi.swift */,
+				A7649178226E698400E17522 /* ListItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A7ACA5C122667CF5001ADF6D /* ListViewModel.swift */,
+				A749CB80226B5D6F0076D4D2 /* ListDataSource.swift */,
 				A749CB92226D06450076D4D2 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
@@ -337,7 +340,7 @@
 				A7ACA5CA2266B8A0001ADF6D /* URLEncoder.swift in Sources */,
 				A7ACA5D6226778B5001ADF6D /* PoiService.swift in Sources */,
 				A7ACA5D02266BA9E001ADF6D /* Request.swift in Sources */,
-				A7521743226D6C09006166F3 /* CustomAnnotation.m in Sources */,
+				A7521743226D6C09006166F3 /* PoiAnnotation.m in Sources */,
 				A749CB84226B621E0076D4D2 /* ListCell.swift in Sources */,
 				A7ACA5C62266ADD0001ADF6D /* Poi.swift in Sources */,
 				A7ACA5D42266BB60001ADF6D /* Response.swift in Sources */,
@@ -346,6 +349,7 @@
 				A7ACA59A22667154001ADF6D /* Application.swift in Sources */,
 				A7ACA5BB22667A8F001ADF6D /* ListViewController.swift in Sources */,
 				A7ACA5CE2266B98D001ADF6D /* NetworkError.swift in Sources */,
+				A7649179226E698400E17522 /* ListItem.swift in Sources */,
 				A7ACA5C222667CF5001ADF6D /* ListViewModel.swift in Sources */,
 				A749CB7F226B58DA0076D4D2 /* DynamicValue.swift in Sources */,
 				A749CB81226B5D6F0076D4D2 /* ListDataSource.swift in Sources */,

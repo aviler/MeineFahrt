@@ -17,7 +17,7 @@ Notes
 - Had some problems to build the map viewmodel in objective-c mainly because of enums and generics that I would need to change in my PoiService and
   in the DynamicValue. To finish the app in time I choose to make a MapViewModel in swift so it acts as a wrapper.
 
-- In the simultor the second tab icon is not showing up at start only if you click in the bar, then changes to the map view and show the icon.
+- Kind of obvious but the yellow car represents the TAXI fleetType from the POI list and red car is the POOLING type.
 
 
 Changelog

@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 #import "MeineFahrt-Swift.h"
-#import "CustomAnnotation.h"
+#import "PoiAnnotation.h"
 
 #define REGION_IN_METERS 100
 #define HAMBURG_LATITUDE 53.551086
@@ -16,7 +16,7 @@
 
 
 @interface MapViewController () {
-  NSMutableArray<CustomAnnotation *> *_annotations;
+  NSMutableArray<PoiAnnotation *> *_annotations;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -36,9 +36,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Map" image:[UIImage imageNamed:@"earth"] tag:1];
-  
+
   [_mapView setDelegate:self];
   [_mapView setZoomEnabled:NO];
   
@@ -65,7 +63,7 @@
                             [self.mapView removeAnnotations:self->_annotations];
                             [self->_annotations removeAllObjects];
                             for (Poi *poi in pois) {
-                              CustomAnnotation *ann = [[CustomAnnotation alloc] initWithPoi:poi];
+                              PoiAnnotation *ann = [[PoiAnnotation alloc] initWithPoi:poi];
                               [self->_annotations addObject:ann];
                             }
                             [self.mapView addAnnotations:self->_annotations];
@@ -76,8 +74,8 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
   
-  if([annotation isKindOfClass:[CustomAnnotation class]]) {
-    CustomAnnotation *custom = (CustomAnnotation *) annotation;
+  if([annotation isKindOfClass:[PoiAnnotation class]]) {
+    PoiAnnotation *custom = (PoiAnnotation *) annotation;
     
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotation"];
     

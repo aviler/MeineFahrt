@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CustomAnnotation : NSObject <MKAnnotation>
+@interface PoiAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, readonly) Poi *poi;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;

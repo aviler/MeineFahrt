@@ -6,11 +6,11 @@
 //  Copyright © 2019 Oliver M Batista. All rights reserved.
 //
 
-#import "CustomAnnotation.h"
+#import "PoiAnnotation.h"
 #import "MeineFahrt-Swift.h"
 
 
-@implementation CustomAnnotation
+@implementation PoiAnnotation
 
 - (id)initWithPoi:(Poi *)poi {
   self = [super init];

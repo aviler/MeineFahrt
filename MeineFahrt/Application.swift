@@ -33,6 +33,8 @@ class Application: UIResponder, UIApplicationDelegate {
     
     // TabBar
     let tabBar = UITabBarController()
+    listVC.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), tag: 0)
+    mapVC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "earth"), tag: 1)
     tabBar.viewControllers = [listVC, mapVC]
     
     

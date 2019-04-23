@@ -12,6 +12,7 @@ import Foundation
 @objc class MapViewModel: NSObject {
   
   private let service: PoiService
+  
   private var data: [Poi] = [Poi]() {
     didSet {
       self.updatePoiOnMap?(self.data)
